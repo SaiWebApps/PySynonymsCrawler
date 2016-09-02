@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
   name = 'synonymscrawler',
   packages = ['synonymscrawler'],
-  version = '0.4',
+  version = '0.5',
   description = 'Python Synonyms Crawler Implementation',
   author = 'Sairam Krishnan',
   author_email = 'sairambkrishnan@gmail.com',
@@ -12,7 +12,7 @@ setup(
   	'blockspring',
   	'requests'
   ],
-  url = 'https://github.com/SaiWebApps/SynonymsCrawler',
-  download_url = 'https://github.com/SaiWebApps/SynonymsCrawler/tarball/0.4',
+  url = 'https://github.com/SaiWebApps/PySynonymsCrawler',
+  download_url = 'https://github.com/SaiWebApps/PySynonymsCrawler/tarball/0.5',
   keywords = ['Python', 'synonyms-crawler', 'web-scraping', 'text-parsing']
 )
