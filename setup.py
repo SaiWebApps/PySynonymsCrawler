@@ -1,16 +1,22 @@
 from setuptools import setup, find_packages
-from codecs import open
 from os import path
 
+import pypandoc
+
 # Constants
-README_FILE = 'README.rst'
-VERSION = '0.9'
-README_PATH = path.join(path.abspath(path.dirname(__file__)), README_FILE)
+README_FILE = 'README.md'
+THIS_DIR_ABS_PATH = path.abspath(path.dirname(__file__))
+README_ABS_PATH = path.join(THIS_DIR_ABS_PATH, README_FILE)
+VERSION = '0.91'
 
 # Load README file's contents into "readmeContents."
-with open(README_PATH, encoding = 'utf-8') as rf:
-  readmeContents = rf.read()
-
+try:
+  readmeContents = pypandoc.convert(README_ABS_PATH, 'rst')
+except:
+  # If pandoc hasn't been installed on the system, then install it
+  # first and then try to convert REAMDE.md to rst format.
+  pypandoc.pandoc_download.download_pandoc()
+  readmeContents = pypandoc.convert(README_ABS_PATH, 'rst')
 
 # Package Config
 setup(
